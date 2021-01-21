@@ -28,7 +28,11 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css",
+              "node_modules/primeicons/primeicons.css",
+              "node_modules/primeng/resources/themes/saga-blue/theme.css",
+              "node_modules/primeng/resources/primeng.min.css"
             ],
             "scripts": []
           },
@@ -124,5 +128,8 @@
       }
     }
   },
-  "defaultProject": "rateCtrl-ui"
+  "defaultProject": "rateCtrl-ui",
+  "cli": {
+    "analytics": "07bb128d-f85f-42a3-b0ed-d4001c33f62c"
+  }
 }
