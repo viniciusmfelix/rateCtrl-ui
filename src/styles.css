@@ -1,1 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+
+.app-container {
+  margin: 0 auto;
+  margin-top: 30px;
+  width: 90%;
+}
+
+.btn-vetor-lighter {
+  background-color: #FBE213;
+  color: #FFFFFF;
+}
+
+.btn-vetor-medium {
+  background-color: #F1AC21;
+  color: #FFFFFF;
+}
+
+.btn-vetor-medium:hover {
+  background-color: #f19721;
+  color: #FFFFFF;
+}
+
+.btn-vetor-darker {
+  background-color: #E27530;
+  color: #FFFFFF;
+}
+
+.btn-vetor-darker:hover {
+  background-color: #E24530;
+  color: #FFFFFF;
+}
