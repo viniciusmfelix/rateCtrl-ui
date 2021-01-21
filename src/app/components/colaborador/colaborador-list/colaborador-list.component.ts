@@ -23,11 +23,19 @@ export class ColaboradorListComponent implements OnInit {
   constructor(private colabordorService: ColaboradorService) {}
 
   ngOnInit(): void {
-    this.colabordorService.findAll().toPromise().then(response => {
-      this.colaboradores = response.content;
-      this.totalElements = response.totalElements;
-      this.totalPages = response.totalPages;
-    });
+    for (let i = 0; i <= 50; i++) {
+      const colaborador: IColaborador = {
+        id: i,
+        nome: 'Vinicius Felix',
+        email: 'vinicius.felix@vetorit.com.br',
+        cargo: 'Dev Java',
+        salario: 10000,
+        valorFixo: true,
+        dataCriacao: new Date(),
+        dataAtualizacao: new Date(),
+      };
+      this.colaboradores.push(colaborador);
+    }
   }
 
 }
