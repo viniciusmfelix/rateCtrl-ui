@@ -1,0 +1,50 @@
+<p-table [value]="colaboradores" styleClass="p-datatable-striped" [scrollable]="true" scrollHeight="550px">
+  <ng-template pTemplate="caption">
+    <div class="p-d-flex p-ai-center p-jc-between">
+      Colaboradores
+    </div>
+  </ng-template>
+  <ng-template pTemplate="header">
+    <tr>
+      <th style="text-align: center; width: 5%;">Id</th>
+      <th>Nome</th>
+      <th>Cargo</th>
+      <th>Salário</th>
+      <th style="text-align: center; width: 10%;">Valor Fixo?</th>
+      <th style="text-align: center;">Detalhes</th>
+      <th style="text-align: center;">Editar</th>
+      <th style="text-align: center;">Excluir</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-colaborador>
+    <tr>
+        <td style="text-align: center; width: 5%;">{{ colaborador.id }}</td>
+        <td>{{ colaborador.nome }}</td>
+        <td>{{ colaborador.cargo }}</td>
+        <td>{{ colaborador.salario | currency: 'BRL' }}</td>
+        <td style="text-align: center; width: 10%;">
+          <ng-template [ngIf]="colaborador.valorFixo">
+            <span class="badge badge-primary" style="padding: 10px">Sim</span>
+          </ng-template>
+          <ng-template [ngIf]="!colaborador.valorFixo">
+            <span class="badge badge-danger" style="padding: 10px">Não</span>
+          </ng-template>
+        </td>
+        <td style="text-align: center;">
+          <button type="button" class="btn btn-vetor-medium"><i class="pi pi-fw pi-search"></i></button>
+        </td>
+        <td style="text-align: center;">
+          <button type="button" class="btn btn-vetor-darker"><i class="pi pi-fw pi-pencil"></i></button>
+        </td>
+        <td style="text-align: center;">
+          <button type="button" class="btn btn-danger"><i class="pi pi-fw pi-trash"></i></button>
+        </td>
+    </tr>
+  </ng-template>
+</p-table>
+<div style="margin-top: 30px;">
+  <p-paginator
+  [rows]="pageInfo.pageSize"
+  [rowsPerPageOptions]="pageInfo.rowsPerPage"
+  [totalRecords]="totalElements"></p-paginator>
+</div>
